@@ -6,6 +6,10 @@ import HighRes from '@/components/high-res'
 import Footer from '@/components/footer'
 import EmailUs from '@/components/email-us'
 
+global.performance = global.performance || {
+  now: () => new Date().getTime(),
+};
+
 export default function Home() {
   return (
     <main className={styles.main}>
