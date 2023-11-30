@@ -1,0 +1,114 @@
+$primary-color: #2196f3;
+$hover-color: #1565c0;
+
+.flex {
+    display: flex;
+  }
+  
+  .flexCol {
+    display: flex;
+    flex-direction: column;
+  }
+  .flexSpaceBetween {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+.cards {
+  @extend .flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 3rem;
+  margin-left: 3rem;
+  margin-right: 23px;
+}
+
+.card {
+  cursor: pointer;
+  @extend .flexCol;
+  gap: 0.8rem;
+  width: 313.33px;
+  padding: 40px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 12px #e8eeff;
+  cursor: pointer;
+  transition: translate 0.25s ease-in-out;
+
+  &:hover {
+    translate: 0 -0.5rem;
+    box-shadow: 0 0 75px #f3f5f9;
+
+    .cardIconWrapper svg:last-of-type path {
+      fill: #175bff;
+    }
+  }
+}
+
+.gitIcon{
+    font-size: 14px;
+    color: $primary-color;
+
+    &:hover {
+      color: $hover-color;
+    }
+  }
+
+  .tags {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    color: white;
+    font-weight: 700;
+    
+    span {
+    min-width: 6rem;
+      padding: 8px;
+      background-color: #2196f3; 
+      border-radius: 5px;
+      font-size: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 4px rgba(33, 150, 243, 0.2); 
+      transition: background-color 0.3s ease-in-out;
+  
+      &.js {
+        background-color: yellow;
+        color: black;
+  
+        &:hover {
+          background-color: #ffd54f; /* Lighter yellow on hover */
+        }
+      }
+  
+      &.blockchain {
+        background-color: red;
+        color: white;
+  
+        &:hover {
+          background-color: #d32f2f; /* Darker red on hover */
+        }
+      }
+  
+      &.golang {
+        background-color: #2196f3; /* Blue color */
+        color: white;
+  
+        &:hover {
+          background-color: #1565c0; /* Darker blue on hover */
+        }
+      }
+    }
+  }
+  
+  .cardIconWrapper {
+  @extend .flexSpaceBetween;
+  align-items: flex-start;
+}
+
+@media screen and (max-width: 648px) {
+  .cards {
+    justify-content: center;
+  }
+}

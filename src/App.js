@@ -4,14 +4,16 @@ import Header from './components/header'
 import HighRes from './components/high-res'
 import Footer from './components/footer'
 import EmailUs from './components/email-us'
+import ProjectList from './components/projects'
 
 function App() {
   return (
     <div className="App">
         <Header/>
-        <HighRes/>
+        <ProjectList/>
+        {/* <HighRes/>
         <EmailUs/>
-        <Footer/>
+        <Footer/> */}
     </div>
   );
 }
