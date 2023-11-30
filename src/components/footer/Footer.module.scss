@@ -1,0 +1,121 @@
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+.flexStart {
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6rem;
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgb(10, 10, 24);
+  padding: 4rem 6rem;
+  position: relative;
+  z-index: 1;
+}
+
+.containerDark {
+  background-color: rgb(10, 10, 24);
+}
+
+.chimneyTheme {
+  background-color: rgb(10, 10, 24);
+}
+
+.heading {
+  @extend .flexCol;
+  gap: 1rem;
+  max-width: 240px;
+  font-size: 16px;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8rem;
+}
+
+.menuItem {
+  @extend .flexCol;
+  gap: 1.2rem;
+}
+
+.menuTitle {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.07em;
+  color: rgb(127, 101, 101);
+  text-transform: uppercase;
+}
+
+.grey1 {
+  color: grey !important;
+}
+
+.subMenu {
+  @extend .flexCol;
+  gap: 1rem;
+  cursor: pointer;
+
+  a {
+    @extend .flexStart;
+    align-items: center;
+    gap: 0.5rem;
+
+    svg {
+      width: 1.55rem;
+    }
+  }
+
+  a:hover {
+    color: blue($color: #000000);
+    text-decoration: underline;
+  }
+}
+
+
+// @include media('<=tablet') {
+//   .container {
+//     flex-direction: column;
+//     align-items: center;
+//     padding: 4rem 1.5rem;
+//     gap: 3rem;
+//   }
+
+//   .menu {
+//     flex-wrap: wrap;
+//     justify-content: center;
+//     gap: 4rem;
+//   }
+// }
+
+// @include media('<=468px') {
+//   .container {
+//     padding: 4rem 1rem;
+//     align-items: center;
+//   }
+
+//   .heading {
+//     align-items: center;
+
+//     span {
+//       text-align: center;
+//     }
+//   }
+
+//   .menuItem {
+//     align-items: center;
+//   }
+
+//   .subMenu {
+//     align-items: center;
+//   }
+// }
