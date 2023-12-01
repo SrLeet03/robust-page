@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
 	AppBar,
 	Toolbar,
@@ -66,7 +66,7 @@ const Header = () => {
 	return (
 		<div className={stl.root}>
 			<AppBar position="fixed" className={stl.appBar}>
-				<Toolbar >
+				<Toolbar>
 					<img src="logo.png" alt="Robust" className={stl.logo} />
 
 					<Link className={stl.title} underline="none" href="/">

@@ -1,6 +1,6 @@
 import stl from "./EmailUs.module.scss";
 import React, { useState } from "react";
-import { TextField, Button, Container } from "@mui/material";
+import { TextField, Button } from "@mui/material";
 
 const EmailUs = () => {
 	const [formData, setFormData] = useState({
