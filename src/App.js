@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Header from './components/header' 
 import HighRes from './components/high-res'
@@ -10,10 +10,10 @@ function App() {
   return (
     <div className="App">
         <Header/>
-        <ProjectList/>
-        {/* <HighRes/>
+        {/* <ProjectList/> */}
+        <HighRes/>
         <EmailUs/>
-        <Footer/> */}
+        <Footer/>
     </div>
   );
 }
