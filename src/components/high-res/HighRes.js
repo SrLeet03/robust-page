@@ -37,7 +37,7 @@ const HighRes = () => {
 
 				<div className={stl.textContainer}>
 					<motion.h2 {...motionProps} data-testid="highResTitle">
-						High performance and quality softwares
+						High Performance and Quality Softwares
 					</motion.h2>
 					<div className={stl.desc}>
 						<motion.h3

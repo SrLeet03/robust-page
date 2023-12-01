@@ -1,0 +1,98 @@
+// AboutUs.module.scss
+.flexCenter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.container {
+	max-width: 70%;
+	margin: 5rem auto 3rem;
+	font-family: "Arial", sans-serif;
+
+	.header {
+		text-align: center;
+		margin-bottom: 20px;
+
+		h1 {
+			font-size: 2em;
+			margin-bottom: 10px;
+		}
+
+		p {
+			color: gray;
+			font-size: 1.2em;
+		}
+	}
+
+	.intro {
+		margin-bottom: 1rem;
+		p {
+			font-size: 1.1em;
+			line-height: 1.6;
+			color: #c0c0c0;
+		}
+	}
+
+	.mission {
+		@extend .flexCenter;
+		margin-bottom: 2rem;
+		span {
+			color: #33ffbd;
+			font-weight: bold;
+		}
+		img {
+			height: 5rem;
+			width: auto;
+			margin: 1rem;
+		}
+		p {
+			font-size: 1.1em;
+			line-height: 1.6;
+			color: #e5e4e2;
+		}
+	}
+
+	.whyChoose {
+		font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+		span {
+			color: #008080;
+		}
+		h1 {
+			font-size: 1.9rem;
+			margin: 2rem;
+		}
+		h3 {
+			padding: 1rem;
+		}
+
+		img {
+			height: 5rem;
+			width: auto;
+		}
+	}
+	.getStarted {
+		h1 {
+			margin: 2rem;
+		}
+		p {
+			font-size: 1.1em;
+			line-height: 1.6;
+			color: #e5e4e2;
+		}
+        button{
+            margin-top: 1.5rem;
+            text-transform: none;
+        }
+	}
+}
+@media (max-width: 500px) {
+	.container {
+        max-width: 75%;
+		.whyChoose {
+			h1 {
+				font-size: 1.6rem;
+                margin-bottom: 1rem;
+			}
+		}
+	}
+}
