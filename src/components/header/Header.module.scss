@@ -1,14 +1,85 @@
-// Header.scss
+.root {
+	flex-grow: 1;
+	.appBar {
+		border-radius: 5px;
+		background-color: white;
+	}
+	.title {
+		margin-left: 5px;
+		font-weight: bold;
+		font-size: 1.2rem;
+		color: #008080;
+	}
 
-.nav-links {
-    display: flex;
-    align-items: center;
-  
-    a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 18px;
-    }
-  }
-  
+	.drawer {
+		width: 240px;
+		flex-shrink: 0;
+	}
+
+	.drawerPaper {
+		width: 240px;
+	}
+
+	.logo {
+		width: 1.5rem;
+		border-radius: 10px;
+	}
+
+	.middleSection {
+		display: flex;
+		align-items: center;
+		margin-right: 12%;
+		flex-grow: 1;
+		gap: 2em;
+	}
+
+	.appBarLink {
+		color: #434343;
+		text-decoration: none;
+		font-size: 0.9em;
+		cursor: pointer;
+		&:hover {
+			color: lightseagreen;
+		}
+	}
+	.menuIcon {
+		height: 30px;
+	}
+
+	.menuButton {
+		&:hover {
+			background-color: transparent;
+		}
+	}
+}
+
+@media (max-width: 700px) {
+	.root {
+		.title {
+			font-size: 0.9rem;
+		}
+		.logo {
+			width: 1rem;
+		}
+		.menuIcon {
+			height: 1.5rem;
+		}
+	}
+}
+
+
+@media (max-width: 700px) {
+	.root {
+		.title {
+			font-size: 0.9rem;
+		}
+		.logo {
+			width: 1rem;
+		}
+		.menuIcon {
+			height: 1.5rem;
+		}
+	}
+}
+
+
