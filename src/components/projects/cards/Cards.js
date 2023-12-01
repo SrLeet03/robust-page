@@ -43,7 +43,7 @@ const Cards = ({ theme = 'vult', customClass }) => {
         >
           <div className={stl.cardIconWrapper}>
           <FaGithub  className={stl.gitIcon} />
-            {<img src={ArrowLinkIcon}/>}
+            {<img src={ArrowLinkIcon} alt='arrow-icon'/>}
           </div>
           <Heading type="h5" color="dark">
             {title}

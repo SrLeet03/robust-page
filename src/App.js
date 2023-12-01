@@ -8,6 +8,7 @@ import HighRes from "./components/high-res";
 import Footer from "./components/footer";
 import EmailUs from "./components/email-us";
 import ProjectList from "./components/projects";
+import Landing from "./components/landing/Landing";
 
 function App() {
 	return (
@@ -15,15 +16,17 @@ function App() {
 			<Router>
 				<Header />
 				<Routes>
-					<Route path="/what-we-do" element={<ProjectList />} />
+					<Route path="/our-work" element={<ProjectList />} />
 					<Route
 						path="/" 
 						element={
 							<React.Fragment>
 								<HighRes />
+                <Landing/>
 								<EmailUs />
 							</React.Fragment>
-						}></Route>
+						}/>
+            <Route path="/about-us"/>
 				</Routes>
 				<Footer />
 			</Router>

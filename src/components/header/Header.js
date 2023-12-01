@@ -23,9 +23,9 @@ const Header = () => {
 	const toggleDrawer = (item) => {
 		setDrawerOpen(!drawerOpen);
 		if (item === "Who We Are") {
-			navigate("/who-we-are");
+			navigate("/about-us");
 		} else if (item === "What We Do") {
-			navigate("/what-we-do");
+			navigate("/our-work");
 		} else if (item === "Connect With Us") {
 			scrollTo("connect-with-us");
 		}
@@ -66,7 +66,7 @@ const Header = () => {
 			}
 		}, 0);
 	};
-	
+
 	return (
 		<div className={stl.root}>
 			<AppBar position="fixed" className={stl.appBar}>
@@ -81,10 +81,10 @@ const Header = () => {
 					{!isSmallScreen && (
 						<div className={stl.middleSection}>
 							<h4 className={stl.appBarLink}>
-								<Link to="/who-we-are">Who We Are</Link>
+								<Link to="/about-us">Who We Are</Link>
 							</h4>
 							<h4 className={stl.appBarLink}>
-								<Link to="/what-we-do">What We Do</Link>
+								<Link to="/our-work">What We Do</Link>
 							</h4>
 							<h4
 								className={stl.appBarLink}

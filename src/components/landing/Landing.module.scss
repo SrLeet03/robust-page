@@ -1,0 +1,32 @@
+.container {
+	max-width: 80%;
+	margin: auto;
+	.desc {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span{
+            font-weight: bold;
+            font-size: 1.30em;
+        }
+        h1{
+            color:#FFA500;
+        }
+        .text{
+            font-size: 1.25em;
+            line-height: 1.5em;
+        }
+        .image{
+            .icon {
+                height: 20rem;
+                width: auto;
+            }
+        }
+		
+	}
+}
+// @media only screen and (max-width: 800px) {
+//     .container{
+//         max-width: 75%;
+//     }
+// } 
