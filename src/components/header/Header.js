@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
 	AppBar,
 	Toolbar,
@@ -7,9 +7,9 @@ import {
 	ListItem,
 	ListItemText,
 	IconButton,
-	Link,
 	useMediaQuery,
 } from "@mui/material";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTheme } from "@mui/system";
 import stl from "./Header.module.scss";
 
@@ -17,15 +17,15 @@ const Header = () => {
 	const [drawerOpen, setDrawerOpen] = useState(false);
 	const theme = useTheme();
 	const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+	const navigate = useNavigate();
+	const location = useLocation();
 
 	const toggleDrawer = (item) => {
 		setDrawerOpen(!drawerOpen);
-
-		// Add specific functionality for each item if needed
 		if (item === "Who We Are") {
-			// Handle "Who We Are" click
+			navigate("/who-we-are");
 		} else if (item === "What We Do") {
-			// Handle "What We Do" click
+			navigate("/what-we-do");
 		} else if (item === "Connect With Us") {
 			scrollTo("connect-with-us");
 		}
@@ -44,40 +44,48 @@ const Header = () => {
 					<ListItem onClick={() => toggleDrawer("Connect With Us")}>
 						<ListItemText primary="Connect With Us" />
 					</ListItem>
-					{/* Add more items as needed */}
 				</>
 			)}
 		</List>
 	);
 
 	const scrollTo = (id) => {
-		const element = document.getElementById(id);
-		if (element) {
-			const offset = 85;
-			const elementPosition = element.offsetTop - offset;
-
-			window.scrollTo({
-				top: elementPosition,
-				behavior: "smooth",
-			});
+		if (location.pathname !== "/") {
+			navigate("/");
 		}
-	};
+		setTimeout(() => {
+			const element = document.getElementById(id);
+			if (element) {
+				const offset = 85;
+				const elementPosition = element.offsetTop - offset;
 
+				window.scrollTo({
+					top: elementPosition,
+					behavior: "smooth",
+				});
+			}
+		}, 0);
+	};
+	
 	return (
 		<div className={stl.root}>
 			<AppBar position="fixed" className={stl.appBar}>
 				<Toolbar>
 					<img src="logo.png" alt="Robust" className={stl.logo} />
 
-					<Link className={stl.title} underline="none" href="/">
-						Robust Solutions
+					<Link to="/">
+						<p className={stl.title}>Robust Solutions</p>
 					</Link>
 
 					<div style={{ flexGrow: "1" }}></div>
 					{!isSmallScreen && (
 						<div className={stl.middleSection}>
-							<h4 className={stl.appBarLink}>Who We Are</h4>
-							<h4 className={stl.appBarLink}>What We Do</h4>
+							<h4 className={stl.appBarLink}>
+								<Link to="/who-we-are">Who We Are</Link>
+							</h4>
+							<h4 className={stl.appBarLink}>
+								<Link to="/what-we-do">What We Do</Link>
+							</h4>
 							<h4
 								className={stl.appBarLink}
 								onClick={() => scrollTo("connect-with-us")}>
