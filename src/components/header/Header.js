@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
 	AppBar,
 	Toolbar,
@@ -12,6 +12,7 @@ import {
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTheme } from "@mui/system";
 import stl from "./Header.module.scss";
+import { scrollTo } from "../../hooks";
 
 const Header = () => {
 	const [drawerOpen, setDrawerOpen] = useState(false);
@@ -23,11 +24,11 @@ const Header = () => {
 	const toggleDrawer = (item) => {
 		setDrawerOpen(!drawerOpen);
 		if (item === "Who We Are") {
-			navigate("/who-we-are");
+			navigate("/about-us");
 		} else if (item === "What We Do") {
-			navigate("/what-we-do");
+			navigate("/our-work");
 		} else if (item === "Connect With Us") {
-			scrollTo("connect-with-us");
+			scrollTo("connect-with-us",navigate , location);
 		}
 	};
 
@@ -49,24 +50,6 @@ const Header = () => {
 		</List>
 	);
 
-	const scrollTo = (id) => {
-		if (location.pathname !== "/") {
-			navigate("/");
-		}
-		setTimeout(() => {
-			const element = document.getElementById(id);
-			if (element) {
-				const offset = 85;
-				const elementPosition = element.offsetTop - offset;
-
-				window.scrollTo({
-					top: elementPosition,
-					behavior: "smooth",
-				});
-			}
-		}, 0);
-	};
-	
 	return (
 		<div className={stl.root}>
 			<AppBar position="fixed" className={stl.appBar}>
@@ -81,14 +64,14 @@ const Header = () => {
 					{!isSmallScreen && (
 						<div className={stl.middleSection}>
 							<h4 className={stl.appBarLink}>
-								<Link to="/who-we-are">Who We Are</Link>
+								<Link to="/about-us">Who We Are</Link>
 							</h4>
 							<h4 className={stl.appBarLink}>
-								<Link to="/what-we-do">What We Do</Link>
+								<Link to="/our-work">What We Do</Link>
 							</h4>
 							<h4
 								className={stl.appBarLink}
-								onClick={() => scrollTo("connect-with-us")}>
+								onClick={() => scrollTo("connect-with-us" , navigate , location)}>
 								Connect With Us
 							</h4>
 						</div>

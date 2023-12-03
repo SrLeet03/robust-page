@@ -47,3 +47,22 @@ export const useWindow = () => {
 
   return windowWidth
 }
+
+export const scrollTo = (id , navigate , location) => {
+  console.log(location.pathname)
+  if (location.pathname !== "/") {
+    navigate("/");
+  }
+  setTimeout(() => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 85;
+      const elementPosition = element.offsetTop - offset;
+
+      window.scrollTo({
+        top: elementPosition,
+        behavior: "smooth",
+      });
+    }
+  }, 0);
+};

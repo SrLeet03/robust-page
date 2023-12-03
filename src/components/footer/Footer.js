@@ -1,12 +1,13 @@
 
 import { useState } from 'react'
-// import Link from 'next/link'
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
-// import {Paragraph} from '@mui/material'
-import Paragraph from '../paragraph'
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
+import Paragraph from '../paragraph'
+import { scrollTo } from "../../hooks";
 import { getFadeUpMotion } from '../../../src/hooks'
+
 import stl from './Footer.module.scss'
 
 const Footer = ({
@@ -16,53 +17,48 @@ const Footer = ({
   const motionProps = getFadeUpMotion(animation, setAnimation)
 
    const theme = 'vult' ; const isDark = true ;
-   
 
+   const navigate = useNavigate();
+   const location = useLocation();
+ 
   const footerMenu = [
     {
       id: 0,
-      name: 'company',
+      name: 'Company',
       subLinks: [
-        { name: 'About Robust', link: '/' },
+        { name: 'About Robust', link: '/about-us' },
       ],
     },
     {
       id: 1,
-      name: 'products',
+      name: 'Products',
       subLinks: [
         {
-          icon: <image src={'/logo.svg'}/>,
+          // icon: <image src={'/logo.svg'}/>,
           name: 'Health Industry Products',
-          link: theme === 'atlus' ? '/' : '/',
+          link:  '/our-work',
         },
         {
-          icon: <image src={'/logo.svg'}/>,
+          // icon: <image src={'/logo.svg'}/>,
           name: 'Bots Products',
-          link: theme === 'atlus' ? '/' : '/',
+          link: '/our-work',
         },
       ],
     },
     {
-      id: 3,
-      name: 'resources',
+      id: 2,
+      name: 'Resources',
       subLinks: [
         {
-          name: 'testimonials',
-          link: '/',
+          name: 'Contact Us',
         },
         {
-          name: 'support',
-          link:
-            '',
-          target: '_blank',
+          name: 'Terms',
+          link: '/privacy-policy',
         },
         {
-          name: 'terms',
-          link: '/',
-        },
-        {
-          name: 'privacy',
-          link: '/',
+          name: 'Privacy',
+          link: '/privacy-policy',
         },
       ],
     },
@@ -76,6 +72,7 @@ const Footer = ({
     window.scrollTo(0, 0)
   }
 
+
   return (
     <footer
       className={clsx(
@@ -85,7 +82,6 @@ const Footer = ({
     >
       <motion.div {...motionProps} className={stl.heading}>
         <div className={stl.logo} data-testid="footerLogo">
-          {/* {isDark || theme === 'chimney' ? {Logo} : {Logo}} */}
         </div>
         <Paragraph
           size="medium"
@@ -111,7 +107,7 @@ const Footer = ({
               {name}
             </div>
             <div className={stl.subMenu}>
-              {subLinks.map(({ name, icon, link = '/' }, i) => (
+              {subLinks.map(({ name, link }, i) => (
                 <motion.div
                   key={i}
                   {...motionProps}
@@ -119,21 +115,16 @@ const Footer = ({
                 >
                   <Paragraph
                     size="large"
-                    color={isDark || theme === 'chimney' ? 'grey1' : 'grey5'}
                   >
-                    {/* <Link
+                    <Link
+                      to={link}
                       legacyBehavior
                       href={link}
                       prefetch={false}
-                      onClick={ScrollToTop}
+                      onClick={() => scrollTo("connect-with-us" , navigate , location)}
                     >
-                      <a
-                        target={checkUrlForTarget(link, theme)}
-                        rel="noreferrer"
-                      >
-                        {icon} {name}
-                      </a>
-                    </Link> */}
+                       {name}
+                    </Link>
                   </Paragraph>
                 </motion.div>
               ))}

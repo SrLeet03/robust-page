@@ -12,7 +12,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 6rem;
+  gap: 2rem;
   width: 100%;
   margin: 0 auto;
   background-color: rgb(10, 10, 24);
@@ -39,7 +39,7 @@
 .menu {
   display: flex;
   flex-wrap: wrap;
-  gap: 8rem;
+  gap: 2rem;
 }
 
 .menuItem {
@@ -82,40 +82,3 @@
 }
 
 
-// @include media('<=tablet') {
-//   .container {
-//     flex-direction: column;
-//     align-items: center;
-//     padding: 4rem 1.5rem;
-//     gap: 3rem;
-//   }
-
-//   .menu {
-//     flex-wrap: wrap;
-//     justify-content: center;
-//     gap: 4rem;
-//   }
-// }
-
-// @include media('<=468px') {
-//   .container {
-//     padding: 4rem 1rem;
-//     align-items: center;
-//   }
-
-//   .heading {
-//     align-items: center;
-
-//     span {
-//       text-align: center;
-//     }
-//   }
-
-//   .menuItem {
-//     align-items: center;
-//   }
-
-//   .subMenu {
-//     align-items: center;
-//   }
-// }

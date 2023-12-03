@@ -27,7 +27,7 @@ const EmailUs = () => {
 			<div
 				className={stl.formContainer}>
 				<h2 className={stl.heading}>Let's Connect</h2>
-				<p>
+				<p style={{color:"#333333"}}>
 					Have questions or need assistance? Drop us an email, and
 					we'll get back to you!
 				</p>

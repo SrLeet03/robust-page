@@ -3,6 +3,7 @@
 	.appBar {
 		border-radius: 5px;
 		background-color: white;
+		z-index: 200;
 	}
 	.title {
 		margin-left: 5px;
@@ -38,9 +39,14 @@
 		text-decoration: none;
 		font-size: 0.9em;
 		cursor: pointer;
-		&:hover {
+		&:hover,
+		&:active {
 			color: lightseagreen;
 		}
+	}
+	.activeLink {
+		color: #007bff;
+		font-weight: bold;
 	}
 	.menuIcon {
 		height: 30px;
@@ -67,7 +73,6 @@
 	}
 }
 
-
 @media (max-width: 700px) {
 	.root {
 		.title {
@@ -81,5 +86,3 @@
 		}
 	}
 }
-
-
