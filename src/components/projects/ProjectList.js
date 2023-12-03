@@ -37,6 +37,8 @@ const projects = [
   return (
     <div>
       <h1>Our Projects</h1>
+      <h1>Our Projects</h1>
+
       {/* <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {projects.map((project, index) => (
           <ProjectCard key={index} {...project} />
