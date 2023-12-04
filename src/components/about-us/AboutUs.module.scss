@@ -53,6 +53,7 @@
 	}
 
 	.whyChoose {
+        text-align: center;
 		font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 		span {
 			color: #008080;
@@ -71,27 +72,28 @@
 		}
 	}
 	.getStarted {
+        text-align: center;
 		h1 {
-			margin: 2rem;
+			margin: 1rem;
 		}
 		p {
 			font-size: 1.1em;
 			line-height: 1.6;
 			color: #e5e4e2;
 		}
-        button{
-            margin-top: 1.5rem;
-            text-transform: none;
-        }
+		button {
+			margin-top: 1.5rem;
+			text-transform: none;
+		}
 	}
 }
 @media (max-width: 500px) {
 	.container {
-        max-width: 75%;
+		max-width: 75%;
 		.whyChoose {
 			h1 {
 				font-size: 1.6rem;
-                margin-bottom: 1rem;
+				margin-bottom: 1rem;
 			}
 		}
 	}
